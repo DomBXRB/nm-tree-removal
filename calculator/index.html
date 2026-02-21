@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TKL7Q96MX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7TKL7Q96MX');
+    </script>
+    
+    <title>Tree Removal Cost Calculator | Free Instant Quote | NM Tree Removal</title>
+    <meta name="description" content="Calculate your tree removal cost instantly. Free online calculator for New Mexico tree services. Get accurate pricing in 60 seconds - no contact info required.">
+    <meta name="keywords" content="tree removal cost calculator, tree removal price estimate, New Mexico tree cost, free tree quote calculator">
+    <link rel="canonical" href="https://nmtreeremoval.com/calculator/">
+    
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tree Removal Cost Calculator",
+        "url": "https://nmtreeremoval.com/calculator/",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2d4a2d;
+            --primary-darker: #1a2f1a;
+            --accent-gold: #d4a574;
+            --text-light: #f5f5f5;
+            --text-dark: #222222;
+            --gray-light: #8fb28f;
+            --gray-medium: #556b55;
+            --bg-light: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--bg-light);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--primary-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .header-image {
+            width: 100%;
+            display: block;
+        }
+        
+        nav {
+            background: var(--primary-darker);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 60px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+            padding: 18px 0;
+        }
+        
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.nav-cta {
+            color: var(--accent-gold);
+        }
+        
+        /* Calculator Section */
+        .calculator-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+        
+        .calc-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .calc-header h1 {
+            font-size: 56px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .accent-line {
+            width: 120px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 0 auto 20px auto;
+        }
+        
+        .calc-header p {
+            font-size: 18px;
+            color: var(--gray-medium);
+        }
+        
+        /* Calculator Form */
+        .calculator {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--primary-dark);
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Barlow', sans-serif;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            cursor: pointer;
+            border: 3px solid var(--primary-dark);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            cursor: pointer;
+            border: 3px solid var(--primary-dark);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            margin: 0;
+            font-size: 16px;
+            font-family: 'Barlow', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--gray-medium);
+        }
+        
+        /* Calculate Button */
+        .calculate-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--accent-gold);
+            color: var(--primary-darker);
+            border: 3px solid var(--accent-gold);
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        
+        .calculate-btn:hover {
+            background: transparent;
+            color: var(--accent-gold);
+        }
+        
+        /* Price Display */
+        .price-display {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+            display: none; /* HIDDEN BY DEFAULT */
+        }
+        
+        .price-display.show {
+            display: block; /* SHOW WHEN BUTTON CLICKED */
+        }
+        
+        .price-display h2 {
+            font-size: 24px;
+            color: var(--gray-light);
+            margin-bottom: 15px;
+        }
+        
+        .price-range {
+            font-size: 56px;
+            color: var(--accent-gold);
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .price-note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+        
+        /* Lead Form */
+        .lead-form {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+            display: none; /* HIDDEN BY DEFAULT */
+        }
+        
+        .lead-form.show {
+            display: block; /* SHOW WHEN PRICE IS CALCULATED */
+        }
+        
+        .lead-form h3 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .lead-form p {
+            color: var(--gray-medium);
+            margin-bottom: 30px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Barlow', sans-serif;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent-gold);
+            color: var(--primary-darker);
+            border: 3px solid var(--accent-gold);
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+        
+        .submit-btn:hover {
+            background: transparent;
+            color: var(--accent-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-darker);
+            color: var(--text-light);
+            padding: 50px 30px 20px 30px;
+            text-align: center;
+        }
+        
+        footer p {
+            color: var(--gray-light);
+        }
+        
+        @media (max-width: 768px) {
+            .calc-header h1 {
+                font-size: 42px;
+            }
+            
+            .calculator, .lead-form {
+                padding: 30px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/zia_header.png" alt="NM Tree Removal" class="header-image">
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#cities">Cities</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/calculator/" class="nav-cta">Instant Cost Calculator</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="calculator-section">
+        <div class="calc-header">
+            <h1>TREE REMOVAL COST CALCULATOR</h1>
+            <div class="accent-line"></div>
+            <p>Get an instant estimate for your tree removal project</p>
+        </div>
+        
+        <div class="calculator">
+            <form id="calcForm">
+                <!-- City Selection -->
+                <div class="form-group">
+                    <label for="city">Select Your City</label>
+                    <select id="city" required>
+                        <option value="">Choose your location...</option>
+                        <option value="albuquerque">Albuquerque</option>
+                        <option value="rio-rancho">Rio Rancho</option>
+                        <option value="las-cruces">Las Cruces</option>
+                        <option value="santa-fe">Santa Fe</option>
+                        <option value="clovis">Clovis</option>
+                        <option value="roswell">Roswell</option>
+                        <option value="farmington">Farmington</option>
+                        <option value="carlsbad">Carlsbad</option>
+                        <option value="alamogordo">Alamogordo</option>
+                        <option value="hobbs">Hobbs</option>
+                        <option value="gallup">Gallup</option>
+                        <option value="los-lunas">Los Lunas</option>
+                        <option value="los-alamos">Los Alamos</option>
+                    </select>
+                </div>
+                
+                <!-- Service Type - NEW -->
+                <div class="form-group">
+                    <label for="serviceType">What Service Do You Need?</label>
+                    <select id="serviceType" required>
+                        <option value="removal">Complete Tree Removal</option>
+                        <option value="trimming">Trimming/Pruning Only</option>
+                        <option value="stump">Stump Grinding Only</option>
+                        <option value="assessment">Not Sure - Need Assessment</option>
+                    </select>
+                </div>
+                
+                <!-- Tree Species -->
+                <div class="form-group">
+                    <label for="species">Tree Species</label>
+                    <select id="species" required>
+                        <option value="">Select tree type...</option>
+                        <option value="cottonwood">Cottonwood</option>
+                        <option value="elm">Siberian Elm</option>
+                        <option value="russian-olive">Russian Olive</option>
+                        <option value="mesquite">Mesquite</option>
+                        <option value="pinon">Piñon Pine</option>
+                        <option value="juniper">Juniper</option>
+                        <option value="locust">New Mexico Locust</option>
+                        <option value="cypress">Arizona Cypress</option>
+                        <option value="other">Other/Unknown</option>
+                    </select>
+                </div>
+                
+                <!-- Tree Condition - NEW -->
+                <div class="form-group">
+                    <label for="treeCondition">Tree Condition</label>
+                    <select id="treeCondition" required>
+                        <option value="healthy">Healthy/Alive</option>
+                        <option value="dead">Dead/Dying</option>
+                        <option value="damaged">Storm Damaged</option>
+                        <option value="diseased">Diseased</option>
+                    </select>
+                </div>
+                
+                <!-- Tree Height -->
+                <div class="form-group">
+                    <label for="height">Tree Height (feet)</label>
+                    <input type="range" id="height" min="10" max="80" value="30" step="5">
+                    <div class="slider-value">
+                        <span>10 ft</span>
+                        <span id="heightValue">30 ft</span>
+                        <span>80 ft</span>
+                    </div>
+                </div>
+                
+                <!-- Tree Diameter -->
+                <div class="form-group">
+                    <label for="diameter">Trunk Diameter (inches)</label>
+                    <input type="range" id="diameter" min="6" max="60" value="18" step="2">
+                    <div class="slider-value">
+                        <span>6 in</span>
+                        <span id="diameterValue">18 in</span>
+                        <span>60 in</span>
+                    </div>
+                </div>
+                
+                <!-- Proximity to Structures - NEW -->
+                <div class="form-group">
+                    <label for="proximity">Proximity to Structures</label>
+                    <select id="proximity" required>
+                        <option value="clear">Clear area - no obstacles</option>
+                        <option value="within-10ft">Within 10 feet of house/building</option>
+                        <option value="near-power">Near power lines</option>
+                        <option value="over-structure">Over house/driveway/patio</option>
+                    </select>
+                </div>
+                
+                <!-- Timeline - NEW -->
+                <div class="form-group">
+                    <label for="timeline">When Do You Need This Done?</label>
+                    <select id="timeline" required>
+                        <option value="emergency">Emergency (ASAP - 24-48 hours)</option>
+                        <option value="urgent">Urgent (Within 1 week)</option>
+                        <option value="soon">Soon (Within 1 month)</option>
+                        <option value="planning">Planning ahead (1-3 months)</option>
+                    </select>
+                </div>
+                
+                <!-- Complexity Factors -->
+                <div class="form-group">
+                    <label>Additional Services Needed (select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="stumpGrinding" value="stump">
+                            <label for="stumpGrinding">Stump grinding needed</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="haulAway" value="haul">
+                            <label for="haulAway">Haul away all debris</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="multipleTrees" value="multiple">
+                            <label for="multipleTrees">Multiple trees (2-5)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="difficultAccess" value="access">
+                            <label for="difficultAccess">Difficult access (backyard, slope, etc.)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Calculate Button -->
+                <button type="button" class="calculate-btn" onclick="calculatePrice()">CALCULATE MY PRICE</button>
+            </form>
+            
+            <!-- Price Display (HIDDEN UNTIL BUTTON CLICKED) -->
+            <div class="price-display" id="priceDisplay">
+                <h2>ESTIMATED COST</h2>
+                <div class="price-range" id="priceRange">$0 - $0</div>
+                <p class="price-note">Final price may vary based on site inspection</p>
+            </div>
+            
+            <!-- Lead Capture Form (HIDDEN UNTIL PRICE CALCULATED) -->
+            <div class="lead-form" id="leadForm">
+                <h3>GET YOUR EXACT QUOTE</h3>
+                <p>Provide your contact info and we'll connect you with 2-3 licensed contractors today</p>
+                
+                <form action="/calculator/submit-quote.php" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    
+                    <!-- Hidden fields for email -->
+                    <input type="hidden" name="estimated_price" id="hiddenPrice" value="">
+                    <input type="hidden" name="city" id="hiddenCity" value="">
+                    <input type="hidden" name="tree_height" id="hiddenHeight" value="">
+                    <input type="hidden" name="tree_diameter" id="hiddenDiameter" value="">
+                    <input type="hidden" name="service_type" id="hiddenServiceType" value="">
+                    <input type="hidden" name="tree_condition" id="hiddenTreeCondition" value="">
+                    <input type="hidden" name="proximity" id="hiddenProximity" value="">
+                    <input type="hidden" name="timeline" id="hiddenTimeline" value="">
+                    
+                    <button type="submit" class="submit-btn">Get Contractor Quotes</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 NM Tree Removal. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Get URL parameter for city pre-selection
+        const urlParams = new URLSearchParams(window.location.search);
+        const cityParam = urlParams.get('city');
+        if (cityParam) {
+            document.getElementById('city').value = cityParam;
+        }
+        
+        // Update slider values display
+        const heightSlider = document.getElementById('height');
+        const heightValue = document.getElementById('heightValue');
+        const diameterSlider = document.getElementById('diameter');
+        const diameterValue = document.getElementById('diameterValue');
+        
+        heightSlider.oninput = function() {
+            heightValue.textContent = this.value + ' ft';
+        }
+        
+        diameterSlider.oninput = function() {
+            diameterValue.textContent = this.value + ' in';
+        }
+        
+        // CALCULATE PRICE FUNCTION (BUTTON CLICK)
+        function calculatePrice() {
+            const city = document.getElementById('city').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const treeCondition = document.getElementById('treeCondition').value;
+            const height = parseInt(heightSlider.value);
+            const diameter = parseInt(diameterSlider.value);
+            const proximity = document.getElementById('proximity').value;
+            const timeline = document.getElementById('timeline').value;
+            
+            // Validate city selection
+            if (!city || city === '') {
+                alert('Please select your city first!');
+                document.getElementById('city').focus();
+                return;
+            }
+            
+            // Track calculation via AJAX (send notification to Dom)
+            const calculationData = {
+                city: city,
+                serviceType: serviceType,
+                treeCondition: treeCondition,
+                height: height + ' ft',
+                diameter: diameter + ' in',
+                proximity: proximity,
+                timeline: timeline,
+                price: '' // Will be set below after calculation
+            };
+            
+            // Calculate base price
+            let basePrice = 0;
+            if (height <= 20) basePrice = 400;
+            else if (height <= 40) basePrice = 800;
+            else if (height <= 60) basePrice = 1500;
+            else basePrice = 2500;
+            
+            // Diameter adjustment
+            if (diameter > 30) basePrice *= 1.3;
+            else if (diameter > 20) basePrice *= 1.15;
+            
+            // Service type adjustment
+            if (serviceType === 'trimming') basePrice *= 0.4;
+            else if (serviceType === 'stump') basePrice *= 0.3;
+            else if (serviceType === 'assessment') basePrice = 150; // Flat fee for assessment
+            
+            // Tree condition adjustment
+            if (treeCondition === 'dead') basePrice *= 0.9; // Easier to remove
+            else if (treeCondition === 'damaged') basePrice *= 1.1;
+            else if (treeCondition === 'diseased') basePrice *= 1.15;
+            
+            // Proximity adjustment
+            if (proximity === 'within-10ft') basePrice *= 1.25;
+            else if (proximity === 'near-power') basePrice *= 1.35;
+            else if (proximity === 'over-structure') basePrice *= 1.5;
+            
+            // Timeline adjustment
+            if (timeline === 'emergency') basePrice *= 1.75;
+            else if (timeline === 'urgent') basePrice *= 1.25;
+            
+            // City multipliers
+            const cityMultipliers = {
+                'albuquerque': 1.0, 'santa-fe': 1.0, 'rio-rancho': 0.95,
+                'las-cruces': 0.9, 'clovis': 0.85, 'roswell': 0.85,
+                'farmington': 0.9, 'carlsbad': 0.85, 'alamogordo': 0.85,
+                'hobbs': 0.82, 'gallup': 0.88, 'los-lunas': 0.92, 'los-alamos': 1.05
+            };
+            basePrice *= (cityMultipliers[city] || 1.0);
+            
+            // Additional services
+            if (document.getElementById('stumpGrinding').checked) basePrice += 200;
+            if (document.getElementById('haulAway').checked) basePrice += 150;
+            if (document.getElementById('multipleTrees').checked) basePrice *= 2.5;
+            if (document.getElementById('difficultAccess').checked) basePrice *= 1.2;
+            
+            // Calculate price range
+            const lowEnd = Math.round(basePrice * 0.8 / 50) * 50;
+            const highEnd = Math.round(basePrice * 1.2 / 50) * 50;
+            const priceRange = `$${lowEnd.toLocaleString()} - $${highEnd.toLocaleString()}`;
+            
+            // Add price to tracking data
+            calculationData.price = priceRange;
+            
+            // UPDATE DISPLAY
+            document.getElementById('priceRange').textContent = priceRange;
+            
+            // UPDATE HIDDEN FIELDS
+            document.getElementById('hiddenPrice').value = priceRange;
+            document.getElementById('hiddenCity').value = city;
+            document.getElementById('hiddenHeight').value = height + ' ft';
+            document.getElementById('hiddenDiameter').value = diameter + ' in';
+            document.getElementById('hiddenServiceType').value = serviceType;
+            document.getElementById('hiddenTreeCondition').value = treeCondition;
+            document.getElementById('hiddenProximity').value = proximity;
+            document.getElementById('hiddenTimeline').value = timeline;
+            
+            // SHOW PRICE AND FORM
+            document.getElementById('priceDisplay').classList.add('show');
+            document.getElementById('leadForm').classList.add('show');
+            
+            // Scroll to price
+            document.getElementById('priceDisplay').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // SEND AJAX REQUEST TO TRACK CALCULATION
+            fetch('/calculator/track-calculation.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(calculationData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Calculation tracked:', data);
+            })
+            .catch(error => {
+                console.error('Tracking error:', error);
+                // Don't show error to user - tracking is behind the scenes
+            });
+        }
+        
+        // Form submission validation
+        document.querySelector('.lead-form form').addEventListener('submit', function(e) {
+            const city = document.getElementById('city').value;
+            
+            if (!city || city === '') {
+                e.preventDefault();
+                alert('Please select your city before submitting.');
+                return false;
+            }
+            
+            // Log what we're sending
+            console.log('Form submitting with data:', {
+                price: document.getElementById('hiddenPrice').value,
+                city: document.getElementById('hiddenCity').value,
+                height: document.getElementById('hiddenHeight').value,
+                diameter: document.getElementById('hiddenDiameter').value,
+                serviceType: document.getElementById('hiddenServiceType').value,
+                condition: document.getElementById('hiddenTreeCondition').value,
+                proximity: document.getElementById('hiddenProximity').value,
+                timeline: document.getElementById('hiddenTimeline').value
+            });
+            
+            return true;
+        });
+    </script>
+</body>
+</html>
